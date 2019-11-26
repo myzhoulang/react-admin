@@ -1,4 +1,4 @@
-# React-admin
+<h1 align="center">React-admin</h1>
 
 ## 需要哪些依赖？
 
@@ -22,21 +22,6 @@
 
 ## 配置
 
-### 配置 `eslint`和 `prettier`
-
-1. 在项目根目录下新建 `.eslintrc.js`，并根据需要配置规则。`prettier`配置也可以在这里面配置。(`create-react-app`版本至少 3.0)。
-
-2. 在 `.package.json`的`script`中修改 `start`
-
-```json
-{
-  // ....,
-  "script": {
-    "start": "EXTEND_ESLINT=true react-app-rewired start"
-  }
-}
-```
-
 ### 配置使用 `react-app-rewired` 启动项目
 
 1. 安装 `react-app-rewired`和`customize-cra`
@@ -52,6 +37,20 @@ $ yarn add react-app-rewired customize-cra
   "start": "react-app-rewired start",
   "build": "react-app-rewired build",
   "test": "react-app-rewired test",
+}
+```
+
+### 配置 `eslint`和 `prettier`
+
+1. 在项目根目录下新建 `.eslintrc.js`，并根据需要配置规则。`prettier`配置也可以在这里面配置。**(`create-react-app`版本至少 3.0)**。
+
+2. 在 `.package.json`的`script`中修改 `start`
+
+```json
+{
+  "script": {
+    "start": "EXTEND_ESLINT=true react-app-rewired start"
+  }
 }
 ```
 
