@@ -100,3 +100,39 @@ module.exports = override(
   })
 );
 ```
+
+### 配置 `antd` 打包后 icon 过大的问题
+
+1. 在 `src/config` 目录下新建一个`icons.js`文件，导出需要的 `icon` 文件。
+
+2. 在 `config-overrides.js`文件中通过配置别名的方式减少`icon`。
+
+```js
+const { override, addWebpackAlias } = require("customize-cra");
+
+module.exports = override(
+  // .... 其他配置
+
+  // 添加 webpack 别名，这里用于解决 icon 文件太大的问题
+  addWebpackAlias({
+    "@ant-design/icons/lib/dist$": path.resolve(
+      __dirname,
+      "./src/config/icons.js"
+    )
+  })
+);
+```
+
+### 配置生成构建打包后的分析页面
+
+1. 在 `config-overrides.js`文件中添加 `addBundleVisualizer`。
+
+```js
+const { override, addBundleVisualizer } = require("customize-cra");
+
+module.exports = override(
+  // .... 其他配置
+
+  addBundleVisualizer()
+);
+```
